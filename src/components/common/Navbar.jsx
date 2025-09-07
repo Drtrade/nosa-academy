@@ -19,33 +19,36 @@ const Navbar = () => {
 
   const navItems = [
     { name: "Home", path: "/" },
+    { name: "Team", path: "/team" },
+    { name: "Register", path: "/register" },
     { name: "About", path: "/about" },
     { name: "Contact", path: "/contact" },
+    { name: "Blog", path: "/blog" },
   ];
 
   return (
     <nav
       // ✅ FIX: Corrected Tailwind syntax from `fixed-top-0` to `fixed top-0`
       className={`fixed top-0 w-full z-50 transition-all duration-300 ${
-        isScrolled
-          ? "bg-white/95 backdrop-blur-md shadow-lg"
-          : "bg-transparent"
+        isScrolled ? "bg-white/95 backdrop-blur-md shadow-lg" : "bg-transparent"
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-20">
-
           {/* Logo */}
           <Link to="/" className="flex items-center space-x-6">
-            <div className="w-12 h-12 bg-gradient-to-r from-primary-680 to-accent-500 rounded-full flex items-center justify-center">
-              <span className="text-black font-bold text-xl"></span>
-            </div>
+            <img
+              src="image\logo.png"
+              alt="Nosa Igiebor Sports Academy Logo"
+              className="w-20 h-20 object-contain rounded-full"
+            />
+           
             {/* ✅ FIX: Corrected typo `hodden` → `hidden` */}
             <div className="hidden sm:block">
-              <h1 className="text-xl font-bold text-grey-900">
-                Elite Football Academy
+              <h1 className="text-l font-bold text-grey-900">
+                Nosa Igiebor Sports Academy
               </h1>
-              <p className="text-sm text-gray-600">Excellence in Training</p>
+              {/* <p className="text-sm text-gray-600">Excellence in Training</p> */}
             </div>
           </Link>
 

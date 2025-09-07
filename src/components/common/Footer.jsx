@@ -3,7 +3,8 @@ import {
   Facebook,
   Twitter,
   Instagram,
-  Youtube, // ✅ correct spelling
+  Youtube, 
+  Linkedin, // ✅ correct spelling
   Mail,
   Phone,
   MapPin,
@@ -14,17 +15,19 @@ const Footer = () => {
   const currentYear = new Date().getFullYear(); // ✅ fixed variable name
 
   const socialLinks = [
-    { icon: Facebook, url: "#", label: "Facebook" },
-    { icon: Twitter, url: "#", label: "Twitter" },
-    { icon: Instagram, url: "#", label: "Instagram" },
-    { icon: Youtube, url: "#", label: "YouTube" }, // ✅ fixed icon name
+    { icon: Facebook, url: "https://www.facebook.com/NosaIgieborSportsAcademy", label: "Facebook" },
+    { icon: Twitter, url: "https://www.x.com/NosaAcademy", label: "Twitter" },
+    { icon: Instagram, url: "https://www.instagram.com/NosaIgieborSportsAcademy", label: "Instagram" },
+    { icon: Youtube, url: "http://www.youtube.com/@NosaIgieborSportsAcademy", label: "YouTube" },
+    // { icon: Linkedin, url: "https://www.linkedin.com/NosaIgieborSportsAcademy", label: "Linkedin" }, // ✅ fixed icon name
   ];
 
   const quickLinks = [
-    { name: "About Us", url: "/about" }, // ✅ changed icon → name
-    { name: "Training Programs", url: "/#programs" },
+    { name: "About Us", url: "/about" }, 
     { name: "Contact", url: "/contact" },
-    { name: "Enrollment", url: "/contact" },
+    { name: "Enrollment", url: "/register" },
+    { name: "Team", url: "/team" },
+    { name: "Blog", url: "/blog" },
   ];
 
   return (
@@ -55,6 +58,7 @@ const Footer = () => {
               guidance
             </p>
 
+            {/* Social media */}
             <div className="flex space-x-4">
               {socialLinks.map((social, index) => ( // ✅ fixed .map
                 <motion.a
@@ -102,9 +106,9 @@ const Footer = () => {
               <div className="flex items-start space-x-3">
                 <MapPin className="w-5 h-5 text-primary-500 mt-0.5" />
                 <div className="text-sm text-gray-300">
-                  <p>123 Lokogoma Road</p>
-                  <p>Elite Sports Complex</p>
-                  <p>Federal Capital Territory, FCT 900100</p>
+                  <p>Stella Maris School</p>
+                  <p>Plot 76 cadastral zone C10, Wumba district</p>
+                  <p>Federal Capital Territory, FCT 900104</p>
                 </div>
               </div>
 

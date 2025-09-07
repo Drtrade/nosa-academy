@@ -1,9 +1,12 @@
-import ContactInfo from "../components/contact/ContactInfo";
+import ContactHero from "../components/contact/ContactHero";
+import DetailedContactInfo from "../components/contact/DetailedContactInfo";
 
 const Contact = () => {
   return (
     <div className="min-h-screen pt-20">
-      <ContactInfo />
+      {/* <ContactInfo /> */}
+      <ContactHero/>
+      <DetailedContactInfo/>
     </div>
   )
 }
