@@ -416,111 +416,92 @@ export const PARTNERS = [
 ];
 
 export const BLOG_POSTS = [
+  
   {
     id: 1,
-    title: "Champions League Glory at Camp Nou",
-    date: "2024-03-15",
-    category: "Career Highlights",
-    club: "FC Barcelona",
-    match: "Barcelona vs Manchester United - Champions League Final 2009",
+    title: "Nosa Igiebor’s Historic Winning Goal for Hapoel Tel Aviv in the 2012 Israeli State Cup Final",
+    date: "2012-05-23",
+    category: "Club Career",
+    club: "Hapoel Tel Aviv (Israel)",
+    match: "Hapoel Tel Aviv vs Maccabi Haifa – Israeli State Cup Final 2012",
     image:
-      "https://images.unsplash.com/photo-1431324155629-1a6deb1dec8d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-    video: "https://www.youtube.com/embed/dQw4w9WgXcQ",
+      "https://images.unsplash.com/photo-1522778119026-d647f0596c20?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+    video: "https://www.youtube.com/embed/cZlrHXg6I9s?si=3ETdYQDOAcyJIedH",
     excerpt:
-      "The defining moment that changed everything - leading Barcelona to Champions League victory with a masterclass performance in midfield.",
+      "Nigerian midfielder Nosa Igiebor cemented his legacy in Israeli football by scoring the decisive winning goal in the 2012 Israeli State Cup final, securing glory for Hapoel Tel Aviv against rivals Maccabi Haifa.",
     content: {
       paragraph1:
-        "The 2009 Champions League final at Wembley Stadium marked a pivotal moment in football history, where tactical brilliance met individual excellence. Marcus Rodriguez's commanding performance in midfield orchestrated one of the most dominant displays in Champions League final history. His ability to control the tempo, distribute passes with surgical precision, and provide defensive stability showcased why he was considered among Europe's elite midfielders. This match demonstrated the perfect synthesis of Pep Guardiola's revolutionary tiki-taka philosophy and Rodriguez's exceptional football intelligence.",
+        "On 23 May 2012, Nigerian midfielder Nosa Igiebor became a hero for Hapoel Tel Aviv when he scored the decisive goal in the Israeli State Cup final against Maccabi Haifa. Wearing the prestigious No. 10 jersey, Igiebor showcased his attacking instincts and composure, delivering the match-winning strike that secured Hapoel’s third consecutive State Cup triumph. His performance on the night elevated his reputation as one of the most influential foreign players in Israeli football at the time.",
       paragraph2:
-        "Rodriguez's statistical dominance in this final was unprecedented - completing 94% of his passes, winning 8 out of 10 tackles, and creating 4 key scoring opportunities that directly led to Barcelona's commanding victory. His positioning and movement created numerical superiorities across different phases of play, allowing Barcelona to maintain possession and control territorial advantage throughout the match. The tactical sophistication displayed by Rodriguez became a blueprint for modern central midfield play, influencing coaching methodologies worldwide and establishing new benchmarks for Champions League final performances.",
+        "The final was a fiercely contested affair, with both sides fighting to etch their names into history. When the decisive moment came, it was Igiebor who rose above the pressure. Timing his run perfectly, he found space inside the box and converted with precision, sending the Hapoel fans into wild celebrations. His winning goal not only delivered silverware but also highlighted his ability to perform on the biggest stage, underlining why he was such a key figure in Hapoel’s midfield.",
       paragraph3:
-        "The legacy of this Champions League triumph extends far beyond the trophy itself, representing a transformational moment in contemporary football tactics and player development. Rodriguez's performance analysis from this match is now studied in coaching academies globally, with his decision-making patterns, pressing triggers, and creative passing combinations becoming essential components of advanced football education curricula. This victory solidified Barcelona's dynasty while establishing Rodriguez as one of the most influential midfielders of his generation, whose playing style continues to inspire young players at Elite Football Academy today.",
+        "For Nigerian football and fans of Hapoel Tel Aviv, Igiebor’s State Cup final performance stands as a reminder of his leadership, creativity, and ability to deliver in clutch moments. The 2012 final remains etched in the memories of supporters, with Igiebor’s goal becoming a symbol of glory and pride for both the club and African representation in Israeli football.",
     },
   },
-  {
+   {
     id: 2,
-    title: "El Clasico Masterpiece at Santiago Bernabeu",
-    date: "2024-03-10",
-    category: "El Clasico",
-    club: "Real Madrid",
-    match: "Real Madrid vs Barcelona - La Liga 2015",
+    title: "Nosa Igiebor and Nigeria’s 2013 AFCON Triumph: A Midfield Force in the Super Eagles’ Victory",
+    date: "2013-02-10",
+    category: "National Career",
+    club: "Nigeria National Team",
+    match: "2013 Africa Cup of Nations Final — Nigeria vs Burkina Faso",
     image:
       "https://images.unsplash.com/photo-1553778263-73a83bab9b0c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-    video: "https://www.youtube.com/embed/dQw4w9WgXcQ",
+    video: "https://www.youtube.com/embed/Or33Qf4euJ4?si=PoUZaQ6ului1w-Dv",
     excerpt:
-      "A career-defining El Clasico performance that showcased tactical evolution and leadership during the most intense rivalry in football.",
+      "Nosa Igiebor, part of Nigeria’s midfield unit at AFCON 2013, played a key role in the Super Eagles’ journey to continental glory. His energy, tactical discipline, and presence in the squad contributed to Nigeria’s historic victory over Burkina Faso in the final.",
     content: {
       paragraph1:
-        "El Clasico represents the pinnacle of football intensity, where tactical preparation meets emotional warfare on the grandest stage in world football. Marcus Rodriguez's transition from Barcelona to Real Madrid created one of the most compelling narratives in football history, requiring exceptional mental fortitude and professional adaptability. His first El Clasico appearance in the famous white jersey demonstrated remarkable character, as he faced his former teammates and coaches while embracing new tactical responsibilities under different philosophical frameworks. This match exemplified how elite professionals navigate complex emotional landscapes while maintaining peak performance standards.",
+        "When the Super Eagles of Nigeria lifted the Africa Cup of Nations trophy on February 10, 2013, it marked the nation’s third continental title and ended a 19-year wait for glory. Among the talented squad assembled by coach Stephen Keshi was Nosa Igiebor, then playing for Real Betis in Spain. As an attacking midfielder, Igiebor brought balance to the team with his ability to transition quickly from defense to attack, offering creativity and composure in possession. His inclusion in the squad reflected Keshi’s vision of blending young, hungry talents with experienced leaders.",
       paragraph2:
-        "The tactical complexity of this particular El Clasico showcased Rodriguez's evolutionary development as a complete midfielder, adapting his playing style to Real Madrid's more direct, counter-attacking approach while retaining his exceptional technical abilities. His performance metrics included 89% pass accuracy under intense pressing, 3 successful dribbles in tight spaces, and crucial defensive contributions that neutralized Barcelona's creative threats. Rodriguez's ability to read the game situations and make split-second decisions under extreme pressure highlighted his football intelligence and championship mentality, qualities now emphasized in Elite Football Academy's advanced training programs.",
+        "Throughout the tournament, Igiebor’s contributions in the middle of the park were vital to Nigeria’s progress. He played in key group stage matches, showing tactical intelligence and combining well with John Obi Mikel to stabilize Nigeria’s midfield. His ball distribution and pressing off the ball allowed wingers like Victor Moses and forwards like Emmanuel Emenike to shine, giving the Super Eagles the edge in attacking play. Though he didn’t feature in the final match itself, his earlier performances laid part of the foundation for the team’s success.",
       paragraph3:
-        "This El Clasico victory became a defining moment in Rodriguez's Real Madrid career, establishing his leadership credentials and tactical versatility at the highest competitive level. The match analysis reveals sophisticated positional rotations, progressive passing patterns, and defensive work rate that exceeded expectations, contributing significantly to Real Madrid's tactical superiority. Rodriguez's performance in this historic fixture continues to serve as a masterclass in professional football excellence, demonstrating how world-class players adapt their skills to different tactical systems while maintaining consistent high-level performance. These principles form the foundation of our academy's player development philosophy.",
+        "Nigeria’s 1–0 victory over Burkina Faso in Johannesburg was sealed by Sunday Mba’s memorable strike, but it was the collective effort of the squad — including the contributions of players like Igiebor — that powered the triumph. For Igiebor, being part of the AFCON-winning team etched his name into Nigerian football history. The title not only elevated his international profile but also inspired a new generation of midfielders who continue to look up to the AFCON 2013 heroes.",
     },
   },
   {
     id: 3,
-    title: "World Cup Semi-Final Heroics for Spain",
-    date: "2024-03-05",
-    category: "International Career",
-    club: "Spain National Team",
-    match: "Spain vs Germany - World Cup Semi-Final 2018",
+    title: "Nosa Igiebor: Winning Goal in Hapoel Tel Aviv’s 2012 Israel State Cup Final",
+    date: "2012-11-15",
+    category: "Club Career Highlights",
+    club: "Hapoel Tel Aviv",
+    match: "Hapoel Tel Aviv vs Maccabi Haifa - 2011-12 Israel State Cup Final",
     image:
-      "https://images.unsplash.com/photo-1508098682722-e99c43a406b2?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-    video: "https://www.youtube.com/embed/dQw4w9WgXcQ",
+      "https://images.unsplash.com/photo-1431324155629-1a6deb1dec8d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+    video: "https://www.youtube.com/embed/nG2ajEPRreY?si=brf9EsrjwqLn1lrv",
     excerpt:
-      "Leading Spain to the World Cup final with a performance that combined technical excellence with leadership under ultimate pressure.",
+      "Nosa Igiebor, wearing the No.10 shirt, produced a match-winning moment in the 2012 Israel State Cup Final — his decisive strike secured Hapoel Tel Aviv’s cup victory and cemented his reputation as a clutch attacking midfielder",
     content: {
       paragraph1:
-        "World Cup semi-finals represent the culmination of years of preparation, where national pride intersects with individual ambition on football's greatest stage. Marcus Rodriguez's captaincy of the Spanish national team during this crucial encounter against Germany demonstrated exceptional leadership qualities and tactical understanding under immense pressure. His pre-match preparation, communication with teammates, and on-field decision-making reflected the highest standards of international football professionalism. This match showcased how elite players rise to meet extraordinary challenges while inspiring teammates to exceed their perceived limitations.",
+        "Nosa Igiebor arrived at Hapoel Tel Aviv as a dynamic attacking midfielder blessed with vision, technique, and an eye for decisive moments. Wearing the iconic No.10, he quickly became the creative heartbeat of the team, linking play between midfield and the front line while unlocking defenses with clever passes and timely runs. Across the 2011–12 cup run his presence demanded attention from opponents, creating space and openings that Hapoel exploited throughout the knockout stages.",
       paragraph2:
-        "Rodriguez's technical performance in this World Cup semi-final established new benchmarks for midfield excellence in knockout stage football, recording 96% pass completion rate, 2 assists, and defensive actions that disrupted Germany's attacking rhythm at crucial moments. His ability to maintain composure during high-pressure situations, execute complex tactical instructions, and provide creative solutions when conventional approaches failed demonstrated why he was selected as Spain's captain. The statistical analysis of his movement patterns, passing networks, and pressing coordination revealed sophisticated understanding of international football's tactical demands and physical requirements.",
+        "The defining moment came in the Israel State Cup final. In a tightly contested affair, Igiebor rose to the occasion and produced the decisive contribution — a composed, clinical finish that proved to be the winning goal. That strike not only delivered the trophy for Hapoel but also showcased Igiebor’s temperament: an attacking midfielder with the technique to craft chances and the nerve to finish them when it mattered most. For fans and teammates alike, it was a moment that encapsulated his attacking intelligence and clutch quality..",
       paragraph3:
-        "The broader impact of this World Cup semi-final performance extends beyond individual accolades, representing Spain's tactical evolution and Rodriguez's role in modernizing international football approaches. His leadership style, combining vocal encouragement with exemplary work rate, created positive team dynamics that enabled collective success at the highest competitive level. This match performance has become a case study in sports psychology programs worldwide, analyzing how elite athletes manage pressure, maintain focus, and deliver exceptional performances when stakes are highest. These leadership principles and pressure management techniques are integral components of Elite Football Academy's comprehensive player development curriculum.",
+        "Beyond a single match, the 2011–12 cup-winning goal elevated Igiebor’s standing in Israeli football and reinforced his trajectory as an influential No.10. The goal became an enduring highlight on his résumé and a reminder that midfield creators can be match-deciders. For young playmakers studying his game, Igiebor’s cup final strike remains a textbook example of timing, composure, and footballing instinct—qualities Nosa would carry into later chapters of his career.",
     },
   },
   {
     id: 4,
-    title: "Premier League Debut Magic at Etihad",
-    date: "2024-02-28",
-    category: "Premier League",
-    club: "Manchester City",
-    match: "Manchester City vs Liverpool - Premier League 2019",
+    title: "Nosa Igiebor and Maccabi Tel Aviv’s 2014-15 Treble Season: Double + Toto Cup Glory",
+    date: "2014-06-10",
+    category: "Club Career Highlights",
+    club: "Maccabi Tel Aviv (Israel)",
+    // match: "Manchester City vs Liverpool - Premier League 2019",
     image:
       "https://images.unsplash.com/photo-1574629810360-7efbbe195018?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-    video: "https://www.youtube.com/embed/dQw4w9WgXcQ",
+    video: "https://www.youtube.com/embed/e5Dq6VcCKKA?si=4Y3cdI2hY-vcZedj",
     excerpt:
-      "Adapting to Premier League intensity while maintaining technical excellence in one of the most competitive leagues in world football.",
+      "Nosa Igiebor played a vital role in Maccabi Tel Aviv’s dominance during the 2014-15 season.",
     content: {
       paragraph1:
-        "The Premier League's physical intensity and tactical sophistication present unique challenges that distinguish it from other top European competitions, requiring exceptional adaptability and professional preparation from world-class players. Marcus Rodriguez's transition to Manchester City represented a significant career evolution, adapting his technical skills and tactical understanding to English football's demanding requirements. His debut against Liverpool, one of the Premier League's most intense fixtures, demonstrated remarkable professional maturity and competitive intelligence under Pep Guardiola's tactical system. This performance highlighted how elite players successfully navigate different football cultures while maintaining their core technical competencies.",
+        "The 2014-15 season remains one of the most illustrious in Maccabi Tel Aviv’s history, with the club clinching the Israeli Premier League, the Israel State Cup, and the Toto Cup Al, completing a rare domestic treble. Nosa Igiebor, who had joined earlier in the summer, was part of a squad built to deliver consistency, creativity, and depth. His arrival added flair in midfield, and though he wasn’t always the headline scorer, his presence helped balance the side, allowing attacking talents like Eran Zahavi to shine while he performed the essential work of transition and ball retention.",
       paragraph2:
-        "Rodriguez's debut statistics reflected seamless integration into Manchester City's sophisticated tactical framework, achieving 92% pass accuracy against Liverpool's high-intensity pressing system, completing 6 progressive passes that created scoring opportunities, and maintaining defensive discipline throughout the match duration. His positional awareness, quick decision-making under pressure, and ability to find space in congested areas showcased technical skills honed through years of elite competition. The tactical analysis revealed Rodriguez's understanding of Guardiola's positional play concepts, demonstrating professional adaptability and continuous learning mindset essential for sustained success at the highest competitive levels.",
+        "In the Israel State Cup Final held on 20 May 2015, Maccabi Tel Aviv defeated Hapoel Be’er Sheva 6-2 in a dominant display. While most attention went to the attacking brilliance, Igiebor’s role in maintaining midfield shape and linking defense to attack during pressure phases proved crucial. The triumph in the State Cup was part of a larger achievement, as earlier in that season, Maccabi also lifted the Toto Cup (defeating Maccabi Haifa 2-1 in the final on 31 December 2014) and secured the league title.",
       paragraph3:
-        "This Premier League debut established Rodriguez as a key component in Manchester City's tactical evolution, contributing to their sustained domestic and European success through consistent high-level performances. His ability to maintain technical excellence while adapting to English football's physical demands became a template for international players transitioning to the Premier League. The performance analysis from this match continues to inform coaching strategies at Elite Football Academy, where young players learn about professional adaptability, tactical flexibility, and maintaining performance standards across different competitive environments. Rodriguez's Premier League experience provides valuable insights for developing players aspiring to compete at elite international levels.",
+        "For Nosa Igiebor, this season added a major chapter to his résumé. Being part of a treble-winning campaign gave him exposure to high-pressure matches across different formats, testing both mental and physical endurance. It also allowed him to grow his reputation in international football circles as a midfielder who contributes not just through flashy plays, but through consistency and reliability — vital in championship runs. Fans of Maccabi and aspiring players observing from afar saw in him a model of dedication and football intelligence.",
     },
   },
-  {
-    id: 5,
-    title: "European Championship Final Leadership",
-    date: "2024-02-20",
-    category: "International Career",
-    club: "Spain National Team",
-    match: "Spain vs Italy - European Championship Final 2021",
-    image:
-      "https://images.unsplash.com/photo-1522778119026-d647f0596c20?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-    video: "https://www.youtube.com/embed/dQw4w9WgXcQ",
-    excerpt:
-      "Captaining Spain in a major tournament final, demonstrating leadership, resilience, and the ability to perform on the biggest stage.",
-    content: {
-      paragraph1:
-        "European Championship finals represent the pinnacle of international football competition, where tactical preparation, mental resilience, and leadership qualities converge to determine continental supremacy. Marcus Rodriguez's captaincy during Spain's European Championship final against Italy showcased exceptional leadership attributes developed through years of elite competition and championship experiences. His pre-match preparation, team communication, and on-field leadership demonstrated how world-class players assume responsibility for collective success while managing individual performance expectations. This final exemplified the highest standards of professional football leadership and competitive mentality.",
-      paragraph2:
-        "Rodriguez's tactical performance in this European Championship final highlighted his evolution as a complete midfielder capable of influencing matches through multiple dimensions of play, recording 91% pass completion under intense pressure, 4 key passes that created scoring opportunities, and defensive contributions that neutralized Italy's creative threats. His ability to read game situations, provide tactical solutions during difficult periods, and maintain consistent performance levels throughout extra time demonstrated championship experience and mental fortitude. The match analysis revealed sophisticated understanding of tournament football's unique demands and Rodriguez's capacity to deliver exceptional performances when stakes are highest.",
-      paragraph3:
-        "The legacy of this European Championship final performance extends beyond individual recognition, representing Spain's continued excellence in international competition and Rodriguez's contribution to their tactical identity. His leadership style during this final, combining technical excellence with inspirational communication, established new standards for international captaincy and team dynamics. This match performance has become essential viewing for leadership development programs worldwide, analyzing how elite athletes manage pressure, inspire teammates, and maintain focus during crucial competitive moments. The leadership principles demonstrated in this final are fundamental elements of Elite Football Academy's comprehensive approach to developing complete players and future leaders in football.",
-    },
-  },
+  
 ];
 
 export const SOCIAL_MEDIA_ICONS = {

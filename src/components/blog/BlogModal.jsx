@@ -109,13 +109,22 @@ const BlogModal = ({ post, isOpen, onClose }) => {
                   <div className="prose prose-lg max-w-none">
                     <div className="space-y-6">
                       <p className="text-lg text-gray-700 leading-relaxed">
-                        {post.content.paragraph1}
+                        {post.content.paragraph1 }
+                        
+                      </p>
+                      <p className="text-lg text-gray-700 leading-relaxed">
+                        {post.content.paragraph2 }
+                        
+                      </p>
+                      <p className="text-lg text-gray-700 leading-relaxed">
+                        {post.content.paragraph3 }
+                        
                       </p>
                     </div>
                   </div>
 
                   {/* Call to Action */}
-                  <div className="bg-gradient-to-r from-primary-600 to-accent-600 rounded-2xl p-8 text-center text-white">
+                  {/* <div className="bg-gradient-to-r from-primary-600 to-accent-600 rounded-2xl p-8 text-center text-white">
                     <h3 className="text-2xl font-bold mb-4">Inspired by these moments?</h3>
                     <p className="text-lg mb-6 opacity-90">
                       Join Nosa Sports Academy and start your own legendary journey
@@ -137,7 +146,7 @@ const BlogModal = ({ post, isOpen, onClose }) => {
                         Learn More
                       </Button>
                     </div>
-                  </div>
+                  </div> */}
                 </div>
               </motion.div>
             </div>
