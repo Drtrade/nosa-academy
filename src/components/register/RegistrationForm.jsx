@@ -1,78 +1,142 @@
-import React, { useState } from 'react';
-import { motion } from 'framer-motion';
-import { User, Mail, Phone, Calendar, MapPin, AlertCircle, Shield } from 'lucide-react';
-import Button from '../common/Button';
+import React, { useState } from "react";
+import { motion } from "framer-motion";
+import {
+  User,
+  Mail,
+  Phone,
+  Calendar,
+  MapPin,
+  AlertCircle,
+  Shield,
+} from "lucide-react";
+import Button from "../common/Button";
 
 const RegistrationForm = () => {
   const [formData, setFormData] = useState({
-    firstName: '',
-    middleName: '',
-    surname: '',
-    phone: '',
-    email: '',
-    dateOfBirth: '',
-    age: '',
-    gender: '',
-    parentFullName: '',
-    homeAddress: '',
-    allergies: '',
-    parentEmail: '',
-    parentPhone: '',
-    parentWorkplace: ''
+    firstName: "",
+    middleName: "",
+    surname: "",
+    phone: "",
+    email: "",
+    dateOfBirth: "",
+    age: "",
+    gender: "",
+    homeAddress: "",
+    allergies: "",
+    parentFullName: "",
+    parentEmail: "",
+    parentPhone: "",
+    parentWorkplace: "",
+    termsAccepted: false,
   });
 
   const [isSubmitting, setIsSubmitting] = useState(false);
 
   const handleChange = (e) => {
-    const { name, value } = e.target;
-    setFormData(prev => ({
+    const { name, value, type, checked } = e.target;
+    setFormData((prev) => ({
       ...prev,
-      [name]: value
+      [name]: type === "checkbox" ? checked : value,
     }));
 
-    // Auto-calculate age when date of birth changes
-    if (name === 'dateOfBirth' && value) {
+    if (name === "dateOfBirth" && value) {
       const today = new Date();
       const birthDate = new Date(value);
-      const age = today.getFullYear() - birthDate.getFullYear();
+      let age = today.getFullYear() - birthDate.getFullYear();
       const monthDiff = today.getMonth() - birthDate.getMonth();
-      
+
       if (monthDiff < 0 || (monthDiff === 0 && today.getDate() < birthDate.getDate())) {
-        setFormData(prev => ({ ...prev, age: (age - 1).toString() }));
-      } else {
-        setFormData(prev => ({ ...prev, age: age.toString() }));
+        age--;
       }
+      setFormData((prev) => ({ ...prev, age: age.toString() }));
     }
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     setIsSubmitting(true);
-    
-    // Netlify form submission will handle the redirect
-    // The form action and method are handled by Netlify
-    setTimeout(() => {
+
+    try {
+      const response = await fetch(
+        "https://v1.nocodeapi.com/nosa/google_sheets/fnnyCwNhayDSrTlo?tabId=Sheet1",
+        {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify([[
+            formData.firstName,
+            formData.middleName,
+            formData.surname,
+            formData.phone,
+            formData.email,
+            formData.dateOfBirth,
+            formData.age,
+            formData.gender,
+            formData.homeAddress,
+            formData.allergies,
+            formData.parentFullName,
+            formData.parentEmail,
+            formData.parentPhone,
+            formData.parentWorkplace,
+            new Date().toISOString(),
+          ]]),
+        }
+      );
+
+      if (!response.ok) {
+        const result = await response.json();
+        throw new Error(`Submission error: ${JSON.stringify(result)}`);
+      }
+
+      setFormData({
+        firstName: "",
+        middleName: "",
+        surname: "",
+        phone: "",
+        email: "",
+        dateOfBirth: "",
+        age: "",
+        gender: "",
+        homeAddress: "",
+        allergies: "",
+        parentFullName: "",
+        parentEmail: "",
+        parentPhone: "",
+        parentWorkplace: "",
+        termsAccepted: false,
+      });
+
+      alert("✅ Registration successful! We'll contact you within 24 hours.");
+      // window.location.href = "/thank-you";
+    } catch (error) {
+      console.error("Submission failed:", error.message);
+      alert("❌ Error: " + error.message);
+    } finally {
       setIsSubmitting(false);
-    }, 2000);
+    }
   };
 
-  const inputClasses = "w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all duration-200";
-  const labelClasses = "block text-sm font-semibold text-gray-700 mb-2";
+  const inputClasses = "w-full px-3 xs:px-4 py-2.5 xs:py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all duration-200 text-sm xs:text-base";
+  const labelClasses = "block text-xs xs:text-sm font-semibold text-gray-700 mb-1.5 xs:mb-2";
 
   return (
-    <section className="py-20 bg-gray-50">
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section className="py-12 xs:py-16 sm:py-20 bg-gray-50">
+      <div className="max-w-4xl mx-auto px-3 xs:px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
-          className="text-center mb-12"
+          className="text-center mb-8 xs:mb-10 sm:mb-12"
         >
-          <h1 className="text-4xl font-bold text-gray-900 mb-4">
+          <h1 className="text-xl xs:text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mb-3 xs:mb-4 leading-tight">
             Register for Nosa Sports Academy
           </h1>
-          <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-            Begin your journey to football excellence. Fill out the form below to secure your place at our academy.
+          <p className="text-sm xs:text-base sm:text-lg md:text-xl text-gray-600 max-w-xs xs:max-w-sm sm:max-w-lg md:max-w-2xl mx-auto px-2 xs:px-0 leading-relaxed">
+            <span className="hidden sm:inline">
+              Begin your journey to football excellence. Fill out the form below to secure your place at our academy.
+            </span>
+            <span className="sm:hidden">
+              Begin your football journey. Fill out the form to secure your place.
+            </span>
           </p>
         </motion.div>
 
@@ -80,38 +144,30 @@ const RegistrationForm = () => {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.2 }}
-          className="bg-white rounded-3xl shadow-xl p-8"
+          className="bg-white rounded-2xl xs:rounded-3xl shadow-lg xs:shadow-xl p-4 xs:p-5 sm:p-6 md:p-8"
         >
           {/* Security Notice */}
-          <div className="flex items-center space-x-3 bg-green-50 border border-green-200 rounded-lg p-4 mb-8">
-            <Shield className="w-6 h-6 text-green-600" />
+          <div className="flex items-start space-x-2 xs:space-x-3 bg-green-50 border border-green-200 rounded-lg p-3 xs:p-4 mb-6 xs:mb-8">
+            <Shield className="w-5 h-5 xs:w-6 xs:h-6 text-green-600 flex-shrink-0 mt-0.5" />
             <div>
-              <h3 className="font-semibold text-green-800">Secure Registration</h3>
-              <p className="text-sm text-green-700">Your information is protected and will only be used for academy enrollment purposes.</p>
+              <h3 className="font-semibold text-green-800 text-sm xs:text-base">
+                Secure Registration
+              </h3>
+              <p className="text-xs xs:text-sm text-green-700">
+                Your information is protected and will only be used for academy enrollment purposes.
+              </p>
             </div>
           </div>
 
-          <form 
-            name="academy-registration" 
-            method="POST" 
-            action="/thank-you"
-            data-netlify="true"
-            data-netlify-honeypot="bot-field"
-            onSubmit={handleSubmit}
-            className="space-y-8"
-          >
-            {/* Hidden fields for Netlify */}
-            <input type="hidden" name="form-name" value="academy-registration" />
-            <input type="hidden" name="bot-field" />
-
+          <form onSubmit={handleSubmit} className="space-y-6 xs:space-y-8">
             {/* Trainee Information */}
             <div>
-              <h2 className="text-2xl font-bold text-gray-900 mb-6 flex items-center">
-                <User className="w-6 h-6 mr-3 text-primary-600" />
+              <h2 className="text-lg xs:text-xl sm:text-2xl font-bold text-gray-900 mb-4 xs:mb-5 sm:mb-6 flex items-center">
+                <User className="w-5 h-5 xs:w-6 xs:h-6 mr-2 xs:mr-3 text-primary-600" />
                 Trainee Information
               </h2>
-              
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+
+              <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 xs:gap-5 sm:gap-6">
                 <div>
                   <label htmlFor="firstName" className={labelClasses}>
                     First Name *
@@ -127,7 +183,7 @@ const RegistrationForm = () => {
                     placeholder="Enter first name"
                   />
                 </div>
-                
+
                 <div>
                   <label htmlFor="middleName" className={labelClasses}>
                     Middle Name
@@ -139,11 +195,11 @@ const RegistrationForm = () => {
                     value={formData.middleName}
                     onChange={handleChange}
                     className={inputClasses}
-                    placeholder="Enter middle name (optional)"
+                    placeholder="Middle (optional)"
                   />
                 </div>
-                
-                <div>
+
+                <div className="sm:col-span-2 md:col-span-1">
                   <label htmlFor="surname" className={labelClasses}>
                     Surname *
                   </label>
@@ -160,10 +216,10 @@ const RegistrationForm = () => {
                 </div>
               </div>
 
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-6">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 xs:gap-5 sm:gap-6 mt-4 xs:mt-5 sm:mt-6">
                 <div>
                   <label htmlFor="phone" className={labelClasses}>
-                    <Phone className="w-4 h-4 inline mr-2" />
+                    <Phone className="w-3 h-3 xs:w-4 xs:h-4 inline mr-1.5 xs:mr-2" />
                     Phone Number *
                   </label>
                   <input
@@ -174,13 +230,13 @@ const RegistrationForm = () => {
                     onChange={handleChange}
                     required
                     className={inputClasses}
-                    placeholder="+1 (555) 123-4567"
+                    placeholder="+234 xxx xxx xxxx"
                   />
                 </div>
-                
+
                 <div>
                   <label htmlFor="email" className={labelClasses}>
-                    <Mail className="w-4 h-4 inline mr-2" />
+                    <Mail className="w-3 h-3 xs:w-4 xs:h-4 inline mr-1.5 xs:mr-2" />
                     Email Address *
                   </label>
                   <input
@@ -196,10 +252,10 @@ const RegistrationForm = () => {
                 </div>
               </div>
 
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-6">
+              <div className="grid grid-cols-1 xs:grid-cols-2 sm:grid-cols-3 gap-4 xs:gap-5 sm:gap-6 mt-4 xs:mt-5 sm:mt-6">
                 <div>
                   <label htmlFor="dateOfBirth" className={labelClasses}>
-                    <Calendar className="w-4 h-4 inline mr-2" />
+                    <Calendar className="w-3 h-3 xs:w-4 xs:h-4 inline mr-1.5 xs:mr-2" />
                     Date of Birth *
                   </label>
                   <input
@@ -212,7 +268,7 @@ const RegistrationForm = () => {
                     className={inputClasses}
                   />
                 </div>
-                
+
                 <div>
                   <label htmlFor="age" className={labelClasses}>
                     Age
@@ -222,14 +278,13 @@ const RegistrationForm = () => {
                     id="age"
                     name="age"
                     value={formData.age}
-                    onChange={handleChange}
                     className={inputClasses}
-                    placeholder="Auto-calculated"
+                    placeholder="Auto"
                     readOnly
                   />
                 </div>
-                
-                <div>
+
+                <div className="xs:col-span-2 sm:col-span-1">
                   <label htmlFor="gender" className={labelClasses}>
                     Gender *
                   </label>
@@ -248,9 +303,9 @@ const RegistrationForm = () => {
                 </div>
               </div>
 
-              <div className="mt-6">
+              <div className="mt-4 xs:mt-5 sm:mt-6">
                 <label htmlFor="homeAddress" className={labelClasses}>
-                  <MapPin className="w-4 h-4 inline mr-2" />
+                  <MapPin className="w-3 h-3 xs:w-4 xs:h-4 inline mr-1.5 xs:mr-2" />
                   Home Address *
                 </label>
                 <textarea
@@ -265,9 +320,9 @@ const RegistrationForm = () => {
                 />
               </div>
 
-              <div className="mt-6">
+              <div className="mt-4 xs:mt-5 sm:mt-6">
                 <label htmlFor="allergies" className={labelClasses}>
-                  <AlertCircle className="w-4 h-4 inline mr-2" />
+                  <AlertCircle className="w-3 h-3 xs:w-4 xs:h-4 inline mr-1.5 xs:mr-2" />
                   Allergies / Medical Conditions
                 </label>
                 <textarea
@@ -277,19 +332,19 @@ const RegistrationForm = () => {
                   onChange={handleChange}
                   rows={3}
                   className={inputClasses}
-                  placeholder="Please list any allergies, medical conditions, or medications (leave blank if none)"
+                  placeholder="List any allergies or conditions (leave blank if none)"
                 />
               </div>
             </div>
 
             {/* Parent/Guardian Information */}
             <div>
-              <h2 className="text-2xl font-bold text-gray-900 mb-6 flex items-center">
-                <User className="w-6 h-6 mr-3 text-primary-600" />
-                Parent/Guardian Information
+              <h2 className="text-lg xs:text-xl sm:text-2xl font-bold text-gray-900 mb-4 xs:mb-5 sm:mb-6 flex items-center">
+                <User className="w-5 h-5 xs:w-6 xs:h-6 mr-2 xs:mr-3 text-primary-600" />
+                Parent/Guardian Info
               </h2>
-              
-              <div className="grid grid-cols-1 gap-6">
+
+              <div className="grid grid-cols-1 gap-4 xs:gap-5 sm:gap-6">
                 <div>
                   <label htmlFor="parentFullName" className={labelClasses}>
                     Parent/Guardian Full Name *
@@ -302,15 +357,15 @@ const RegistrationForm = () => {
                     onChange={handleChange}
                     required
                     className={inputClasses}
-                    placeholder="Enter parent/guardian full name"
+                    placeholder="Enter full name"
                   />
                 </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 xs:gap-5 sm:gap-6">
                   <div>
                     <label htmlFor="parentEmail" className={labelClasses}>
-                      <Mail className="w-4 h-4 inline mr-2" />
-                      Parent/Guardian Email *
+                      <Mail className="w-3 h-3 xs:w-4 xs:h-4 inline mr-1.5 xs:mr-2" />
+                      Parent Email *
                     </label>
                     <input
                       type="email"
@@ -323,11 +378,11 @@ const RegistrationForm = () => {
                       placeholder="parent@example.com"
                     />
                   </div>
-                  
+
                   <div>
                     <label htmlFor="parentPhone" className={labelClasses}>
-                      <Phone className="w-4 h-4 inline mr-2" />
-                      Parent/Guardian Phone *
+                      <Phone className="w-3 h-3 xs:w-4 xs:h-4 inline mr-1.5 xs:mr-2" />
+                      Parent Phone *
                     </label>
                     <input
                       type="tel"
@@ -337,7 +392,7 @@ const RegistrationForm = () => {
                       onChange={handleChange}
                       required
                       className={inputClasses}
-                      placeholder="+1 (555) 123-4567"
+                      placeholder="+234 xxx xxx xxxx"
                     />
                   </div>
                 </div>
@@ -353,40 +408,48 @@ const RegistrationForm = () => {
                     value={formData.parentWorkplace}
                     onChange={handleChange}
                     className={inputClasses}
-                    placeholder="Company name and position (optional)"
+                    placeholder="Company and position (optional)"
                   />
                 </div>
               </div>
             </div>
 
             {/* Terms and Conditions */}
-            <div className="bg-gray-50 rounded-lg p-6">
-              <label className="flex items-start space-x-3">
+            <div className="bg-gray-50 rounded-lg p-4 xs:p-5 sm:p-6">
+              <label className="flex items-start space-x-2 xs:space-x-3">
                 <input
                   type="checkbox"
+                  name="termsAccepted"
+                  checked={formData.termsAccepted}
+                  onChange={handleChange}
                   required
-                  className="mt-1 w-4 h-4 text-primary-600 border-gray-300 rounded focus:ring-primary-500"
+                  className="mt-1 w-4 h-4 text-primary-600 border-gray-300 rounded focus:ring-primary-500 flex-shrink-0"
                 />
-                <span className="text-sm text-gray-700">
-                  I agree to the <a href="#" className="text-primary-600 hover:text-primary-700 font-medium">Terms and Conditions</a> and 
-                  <a href="#" className="text-primary-600 hover:text-primary-700 font-medium"> Privacy Policy</a>. 
-                  I consent to Nosa Sports Academy contacting me regarding this registration and future programs.
+                <span className="text-xs xs:text-sm text-gray-700 leading-relaxed">
+                  I agree to the{" "}
+                  <button type="button" className="text-primary-600 hover:text-primary-700 font-medium underline">
+                    Terms and Conditions
+                  </button>{" "}
+                  and{" "}
+                  <button type="button" className="text-primary-600 hover:text-primary-700 font-medium underline">
+                    Privacy Policy
+                  </button>
+                  . I consent to Nosa Igiebor Sports Academy contacting me regarding this registration and future programs.
                 </span>
               </label>
             </div>
 
             {/* Submit Button */}
-            <div className="text-center pt-6">
+            <div className="text-center pt-4 xs:pt-6">
               <Button
                 type="submit"
                 size="lg"
                 disabled={isSubmitting}
-                loading={isSubmitting}
-                className="min-w-[200px]"
+                className="w-full xs:w-auto min-w-[280px] xs:min-w-[200px] text-sm xs:text-base py-3 xs:py-4 font-semibold"
               >
-                {isSubmitting ? 'Submitting...' : 'Complete Registration'}
+                {isSubmitting ? "Submitting..." : "Complete Registration"}
               </Button>
-              <p className="text-sm text-gray-600 mt-4">
+              <p className="text-xs xs:text-sm text-gray-600 mt-3 xs:mt-4 px-4 xs:px-0">
                 * Required fields. We'll contact you within 24 hours to confirm your registration.
               </p>
             </div>

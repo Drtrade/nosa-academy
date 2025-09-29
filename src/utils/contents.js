@@ -246,8 +246,7 @@ export const contactInfo = {
 
 export const Owner = {
   president: {
-    name: " Emmanuel Nosa Igiebor",
-    nickname: "MON",
+    name: " Emmanuel Nosa Igiebor (MON)",
     position: "President & Founder",
     introduction:
       "Emmanuel Nosa Igiebor (MON), fondly known as 'Nosa', is a former Super Eagles midfielder who proudly represented Nigeria on the global stage. Born with a natural gift for football, and rose from humble beginnings in Abuja to become one of Nigeria’s most dynamic midfielders, played professional football across Canada, Cyprus, Israel, Norway, Spain, and Turkey. He is a lover of God, happily married with two lovely children, and loves to participate in initiatives that will draw the next generation closer to God and give back to their community.",
@@ -347,8 +346,7 @@ export const Owner = {
 
 export const TEAM_DATA = {
   president: {
-    name: " Emmanuel Nosa Igiebor",
-    nickname: "MON",
+    name: " Emmanuel Nosa Igiebor (MON)",
     position: "President & Founder",
     brief:
       "Former Real Betis and Hapoel Tel Aviv with 10+ years of professional experience. Led Nigeria to Africa Cup of Nations finals victory.",

@@ -46,124 +46,114 @@ const Hero = () => {
           loop
           muted={isMuted}
           playsInline
+          poster="/path-to-poster-image.jpg" // Add poster for better loading
         >
           <source src={hero.videoUrl} type="video/mp4" />
           {/* Fallback image */}
           <div className="w-full h-full bg-gradient-to-r from-primary-900 to-accent-900"></div>
         </video>
         
-        {/* Video Overlay */}
-        <div className="absolute inset-0 bg-gradient-to-r from-black/70 to-black/50 z-10"></div>
+        {/* Video Overlay - Enhanced for mobile readability */}
+        <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/50 to-black/70 sm:bg-gradient-to-r sm:from-black/70 sm:to-black/50 z-10"></div>
         
-        {/* Video Controls */}
-        <div className="absolute bottom-6 right-6 z-20 flex space-x-3">
+        {/* Video Controls - Mobile optimized positioning */}
+        <div className="absolute bottom-4 right-4 sm:bottom-6 sm:right-6 z-20 flex space-x-2 sm:space-x-3">
           <motion.button
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.9 }}
             onClick={togglePlay}
-            className="w-12 h-12 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center text-white hover:bg-white/30 transition-colors duration-200"
+            className="w-10 h-10 sm:w-12 sm:h-12 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center text-white hover:bg-white/30 transition-colors duration-200 border border-white/10"
+            aria-label={isPlaying ? "Pause video" : "Play video"}
           >
-            {isPlaying ? <Pause className="w-6 h-6" /> : <Play className="w-6 h-6 ml-1" />}
+            {isPlaying ? <Pause className="w-4 h-4 sm:w-6 sm:h-6" /> : <Play className="w-4 h-4 sm:w-6 sm:h-6 ml-0.5" />}
           </motion.button>
           
           <motion.button
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.9 }}
             onClick={toggleMute}
-            className="w-12 h-12 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center text-white hover:bg-white/30 transition-colors duration-200"
+            className="w-10 h-10 sm:w-12 sm:h-12 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center text-white hover:bg-white/30 transition-colors duration-200 border border-white/10"
+            aria-label={isMuted ? "Unmute video" : "Mute video"}
           >
-            {isMuted ? <VolumeX className="w-6 h-6" /> : <Volume2 className="w-6 h-6" />}
+            {isMuted ? <VolumeX className="w-4 h-4 sm:w-6 sm:h-6" /> : <Volume2 className="w-4 h-4 sm:w-6 sm:h-6" />}
           </motion.button>
         </div>
       </div>
 
-      {/* Hero Content */}
-      <div className="relative z-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      {/* Hero Content - Fully responsive */}
+      <div className="relative z-20 w-full max-w-7xl mx-auto px-3 xs:px-4 sm:px-6 lg:px-8 text-center py-8 sm:py-12">
         <motion.div
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
-          className="space-y-8"
+          className="space-y-4 xs:space-y-6 sm:space-y-8"
         >
-          {/* Badge */}
+          {/* Badge - Mobile optimized */}
           <motion.div
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="inline-flex items-center px-6 py-3 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full text-white"
+            className="inline-flex items-center px-3 py-2 xs:px-4 xs:py-2.5 sm:px-6 sm:py-3 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full text-white text-xs xs:text-sm sm:text-base max-w-xs xs:max-w-sm sm:max-w-none mx-auto"
           >
-            <Award className="w-5 h-5 mr-2" />
-            <span className="font-semibold">Founded by African Nation Cup Winner</span>
+            <Award className="w-3 h-3 xs:w-4 xs:h-4 sm:w-5 sm:h-5 mr-1.5 xs:mr-2 flex-shrink-0" />
+            <span className="font-medium xs:font-semibold leading-tight">
+              <span className="hidden xs:inline">Founded by </span>
+              <span className="xs:hidden">By </span>
+              African Nation Cup Winner
+            </span>
           </motion.div>
 
-          {/* Main Title */}
-          <h1 className="text-5xl md:text-7xl font-bold text-white leading-tight">
-            {hero.title}
-            <span className="block text-transparent bg-clip-text bg-gradient-to-r from-primary-400 to-accent-400">
-              {hero.subtitle}
-            </span>
-          </h1>
+          {/* Main Title - Responsive typography */}
+          <div className="space-y-2 xs:space-y-3 sm:space-y-4">
+            <h1 className="text-3xl xs:text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white leading-tight xs:leading-tight sm:leading-tight">
+              <span className="block">{hero.title}</span>
+              <span className="block text-transparent bg-clip-text bg-gradient-to-r from-primary-400 to-accent-400 mt-1 xs:mt-2">
+                {hero.subtitle}
+              </span>
+            </h1>
+          </div>
           
-          <p className="text-xl md:text-2xl text-gray-200 max-w-4xl mx-auto leading-relaxed">
-            {hero.description}
-          </p>
+          {/* Description - Mobile optimized */}
+          <div className="px-2 xs:px-4 sm:px-0">
+            <p className="text-base xs:text-lg sm:text-xl md:text-2xl text-gray-200 max-w-xs xs:max-w-sm sm:max-w-2xl md:max-w-4xl mx-auto leading-relaxed xs:leading-relaxed sm:leading-relaxed">
+              {hero.description}
+            </p>
+          </div>
 
-          {/* CTA Buttons */}
-          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-            <Link to="/register">
-              <Button size="lg" className="min-w-[200px] bg-gradient-to-r from-accent-500 to-accent-600 hover:from-accent-600 hover:to-accent-700">
-                <ArrowRight className="w-5 h-5 mr-2" />
+          {/* CTA Buttons - Fully responsive */}
+          <div className="flex flex-col space-y-3 xs:space-y-4 sm:flex-row sm:space-y-0 sm:space-x-4 justify-center items-center pt-2 xs:pt-4 sm:pt-6">
+            <Link to="/register" className="w-full xs:w-auto">
+              <Button 
+                size="lg" 
+                className="w-full xs:w-auto min-w-[280px] xs:min-w-[200px] sm:min-w-[200px] bg-gradient-to-r from-accent-500 to-accent-600 hover:from-accent-600 hover:to-accent-700 text-sm xs:text-base py-3 xs:py-3 sm:py-4 font-semibold"
+              >
+                <ArrowRight className="w-4 h-4 xs:w-5 xs:h-5 mr-2" />
                 Start Your Journey
               </Button>
             </Link>
             <Button 
               variant="outline" 
               size="lg" 
-              className="min-w-[200px] text-white border-white hover:bg-white hover:text-gray-900"
+              className="w-full xs:w-auto min-w-[280px] xs:min-w-[200px] sm:min-w-[200px] text-white border-white hover:bg-white hover:text-gray-900 text-sm xs:text-base py-3 xs:py-3 sm:py-4 font-semibold transition-all duration-200"
               onClick={togglePlay}
             >
-              <Play className="w-5 h-5 mr-2" />
+              <Play className="w-4 h-4 xs:w-5 xs:h-5 mr-2" />
               {isPlaying ? 'Pause Video' : 'Play Video'}
             </Button>
           </div>
 
-          {/* Stats */}
-          {/* <motion.div 
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.4 }}
-            className="grid grid-cols-2 md:grid-cols-4 gap-8 mt-16 pt-8 border-t border-white/20"
-          >
-            {hero.stats.map((stat, index) => {
-              const IconComponent = getStatIcon(stat.icon);
-              return (
-                <motion.div 
-                  key={index}
-                  initial={{ opacity: 0, scale: 0.8 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  transition={{ duration: 0.6, delay: 0.6 + index * 0.1 }}
-                  className="flex flex-col items-center space-y-3"
-                >
-                  <div className="w-16 h-16 bg-white/10 backdrop-blur-sm rounded-2xl flex items-center justify-center border border-white/20">
-                    <IconComponent className="w-8 h-8 text-accent-400" />
-                  </div>
-                  <div className="text-3xl font-bold text-white">{stat.value}</div>
-                  <div className="text-gray-300 text-center">{stat.label}</div>
-                </motion.div>
-              );
-            })}
-          </motion.div> */}
+        
         </motion.div>
       </div>
 
-      {/* Scroll Indicator */}
+      {/* Scroll Indicator - Mobile optimized */}
       <motion.div 
-        className="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-20"
-        animate={{ y: [0, 10, 0] }}
+        className="absolute bottom-4 xs:bottom-6 sm:bottom-8 left-1/2 transform -translate-x-1/2 z-20"
+        animate={{ y: [0, 8, 0] }}
         transition={{ duration: 2, repeat: Infinity }}
       >
-        <div className="w-6 h-10 border-2 border-white/50 rounded-full flex justify-center">
-          <div className="w-1 h-3 bg-white/50 rounded-full mt-2 animate-pulse"></div>
+        <div className="w-5 h-8 xs:w-6 xs:h-10 border-2 border-white/50 rounded-full flex justify-center">
+          <div className="w-0.5 xs:w-1 h-2 xs:h-3 bg-white/50 rounded-full mt-1.5 xs:mt-2 animate-pulse"></div>
         </div>
       </motion.div>
     </section>

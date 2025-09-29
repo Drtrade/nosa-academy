@@ -8,6 +8,7 @@ const Button = ({
   onClick,
   disabled = false,
   icon,
+  loading = false,
   ...props
 }) => {
   const baseClasses =
@@ -31,7 +32,7 @@ const Button = ({
   return (
     <motion.button
       whileHover={{ scale: 1.02 }}
-      whileTop={{ scale: 0.98 }}
+      whileTap={{ scale: 0.98 }}
       className={`${baseClasses} ${variants[variant]} ${sizes[size]} ${className} `}
       onClick={onClick}
       disabled={disabled}

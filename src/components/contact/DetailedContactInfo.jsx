@@ -1,88 +1,99 @@
-import React from 'react';
-import { motion } from 'framer-motion';
-import { MapPin, Phone, Mail, Clock, Users, BookOpen, Trophy, Shield } from 'lucide-react';
-import SocialMediaLinks from '../common/SocialMediaLinks';
-import { contactInfo } from '../../utils/contents';
+import React from "react";
+import { motion } from "framer-motion";
+import {
+  MapPin,
+  Phone,
+  Mail,
+  Clock,
+  Users,
+  BookOpen,
+  Trophy,
+  Shield,
+} from "lucide-react";
+import SocialMediaLinks from "../common/SocialMediaLinks";
+import { contactInfo } from "../../utils/contents";
 
 const DetailedContactInfo = () => {
   const contactSections = [
     {
       icon: MapPin,
-      title: 'Academy Address',
-      color: 'text-red-600 bg-red-100',
+      title: "Academy Address",
+      color: "text-red-600 bg-red-100",
       details: [
         contactInfo.address.street,
         contactInfo.address.district,
         `${contactInfo.address.city}, ${contactInfo.address.state} ${contactInfo.address.zipCode}`,
-        contactInfo.address.country
-      ]
+        contactInfo.address.country,
+      ],
     },
     {
       icon: Phone,
-      title: 'Phone Numbers',
-      color: 'text-blue-600 bg-blue-100',
+      title: "Phone Numbers",
+      color: "text-blue-600 bg-blue-100",
       details: [
         `Main Office: ${contactInfo.phone}`,
         // `Registration: ${contactInfo.phone.registration}`,
         // `Coaching Dept: ${contactInfo.phone.coaching}`,
         // `Emergency: ${contactInfo.phone.emergency}`
-      ]
+      ],
     },
     {
       icon: Mail,
-      title: 'Email Addresses',
-      color: 'text-green-600 bg-green-100',
+      title: "Email Addresses",
+      color: "text-green-600 bg-green-100",
       details: [
         `General Info: ${contactInfo.email}`,
         // `Registration: ${contactInfo.registrationEmail}`,
         // `Coaching: ${contactInfo.coachingEmail}`,
         // `Media: ${contactInfo.mediaEmail}`
-      ]
+      ],
     },
     {
       icon: Clock,
-      title: 'Office Hours',
-      color: 'text-purple-600 bg-purple-100',
+      title: "Office Hours",
+      color: "text-purple-600 bg-purple-100",
       details: [
         contactInfo.officeHours.weekdays,
         contactInfo.officeHours.saturday,
         contactInfo.officeHours.sunday,
-        contactInfo.officeHours.holidays
-      ]
-    }
+        contactInfo.officeHours.holidays,
+      ],
+    },
   ];
 
-    {/*This not available for implementation for now */}
-    //   const departments = [
-//     {
-//       icon: Users,
-//       title: 'Admissions & Registration',
-//       description: 'Questions about enrollment, requirements, and application process',
-//       contact: contactInfo.phone.registration,
-//       email: contactInfo.registrationEmail
-//     },
-//     {
-//       icon: BookOpen,
-//       title: 'Coaching & Training',
-//       description: 'Training programs, coaching staff, and technical development',
-//       contact: contactInfo.phone.coaching,
-//       email: contactInfo.coachingEmail
-//     },
-//     {
-//       icon: Trophy,
-//       title: 'Events & Competitions',
-//       description: 'Tournament information, matches, and academy events',
-//       contact: contactInfo.phone.main,
-//       email: contactInfo.email
-//     },
-//     {
-//       icon: Shield,
-//       title: 'Emergency & Safety',
-//       description: '24/7 emergency contact for urgent matters',
-//       contact: contactInfo.phone.emergency,
-//       email: contactInfo.email
-//     }
-//   ];
+  {
+    /*This not available for implementation for now */
+  }
+  //   const departments = [
+  //     {
+  //       icon: Users,
+  //       title: 'Admissions & Registration',
+  //       description: 'Questions about enrollment, requirements, and application process',
+  //       contact: contactInfo.phone.registration,
+  //       email: contactInfo.registrationEmail
+  //     },
+  //     {
+  //       icon: BookOpen,
+  //       title: 'Coaching & Training',
+  //       description: 'Training programs, coaching staff, and technical development',
+  //       contact: contactInfo.phone.coaching,
+  //       email: contactInfo.coachingEmail
+  //     },
+  //     {
+  //       icon: Trophy,
+  //       title: 'Events & Competitions',
+  //       description: 'Tournament information, matches, and academy events',
+  //       contact: contactInfo.phone.main,
+  //       email: contactInfo.email
+  //     },
+  //     {
+  //       icon: Shield,
+  //       title: 'Emergency & Safety',
+  //       description: '24/7 emergency contact for urgent matters',
+  //       contact: contactInfo.phone.emergency,
+  //       email: contactInfo.email
+  //     }
+  //   ];
 
   return (
     <section className="py-20 bg-white">
@@ -103,22 +114,35 @@ const DetailedContactInfo = () => {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          {/* Grid */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
             {contactSections.map((section, index) => (
               <motion.div
                 key={index}
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
-                className="bg-gray-50 rounded-2xl p-8 hover:shadow-lg transition-shadow duration-300"
+                className="bg-gray-50 rounded-2xl p-8 hover:shadow-lg transition-shadow duration-300 text-center sm:text-left"
               >
-                <div className={`w-16 h-16 ${section.color} rounded-2xl flex items-center justify-center mb-6`}>
-                  <section.icon className="w-8 h-8" />
+                {/* Rounded Icon */}
+                <div
+                  className={`w-16 h-16 ${section.color} rounded-full flex items-center justify-center mb-6 mx-auto sm:mx-0`}
+                >
+                  <section.icon className="w-8 h-8 text-white" />
                 </div>
-                <h3 className="text-xl font-bold text-gray-900 mb-4">{section.title}</h3>
+
+                <h3 className="text-xl font-bold text-gray-900 mb-4">
+                  {section.title}
+                </h3>
+
                 <div className="space-y-2">
                   {section.details.map((detail, idx) => (
-                    <p key={idx} className="text-gray-600 text-sm leading-relaxed">{detail}</p>
+                    <p
+                      key={idx}
+                      className="text-gray-600 text-sm leading-relaxed"
+                    >
+                      {detail}
+                    </p>
                   ))}
                 </div>
               </motion.div>
@@ -126,95 +150,36 @@ const DetailedContactInfo = () => {
           </div>
         </motion.div>
 
-        {/* Department-Specific Contacts is not available for now*/}
-        {/* <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          className="mb-20"
-        >
-          <div className="text-center mb-12">
-            <h2 className="text-4xl font-bold text-gray-900 mb-4">
-              Department Contacts
-            </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Reach out to the right department for faster, more accurate assistance
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {departments.map((dept, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
-                className="bg-white border border-gray-200 rounded-2xl p-8 hover:shadow-lg transition-shadow duration-300"
-              >
-                <div className="flex items-start space-x-4">
-                  <div className="w-12 h-12 bg-gradient-to-r from-primary-500 to-accent-500 rounded-xl flex items-center justify-center flex-shrink-0">
-                    <dept.icon className="w-6 h-6 text-white" />
-                  </div>
-                  <div className="flex-1">
-                    <h3 className="text-xl font-bold text-gray-900 mb-3">{dept.title}</h3>
-                    <p className="text-gray-600 mb-4">{dept.description}</p>
-                    <div className="space-y-2">
-                      <div className="flex items-center space-x-2">
-                        <Phone className="w-4 h-4 text-primary-600" />
-                        <a href={`tel:${dept.contact}`} className="text-primary-600 hover:text-primary-700 font-medium">
-                          {dept.contact}
-                        </a>
-                      </div>
-                      <div className="flex items-center space-x-2">
-                        <Mail className="w-4 h-4 text-primary-600" />
-                        <a href={`mailto:${dept.email}`} className="text-primary-600 hover:text-primary-700 font-medium">
-                          {dept.email}
-                        </a>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </motion.div>
-            ))}
-          </div>
-        </motion.div> */}
-
         {/* Academy Social Media */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
-          className="bg-gradient-to-r from-primary-600 to-accent-600 rounded-3xl p-12 text-center text-white"
+          className="bg-gradient-to-r from-primary-600 to-accent-600 rounded-2xl xs:rounded-3xl p-6 xs:p-8 sm:p-10 md:p-12 text-center text-white"
         >
-          <h2 className="text-4xl font-bold mb-4">
-            Follow Nosa Igiebor Sports Academy
+          <h2 className="text-2xl xs:text-3xl sm:text-4xl font-bold mb-3 xs:mb-4 leading-tight">
+            <span className="block xs:inline">Follow </span>
+            <span className="block xs:inline">Nosa Igiebor Sports Academy</span>
           </h2>
-          <p className="text-xl mb-8 opacity-90 max-w-3xl mx-auto">
-            Stay connected with us on social media for the latest updates, training tips, match highlights, and academy news
+
+          <p className="text-sm xs:text-base sm:text-lg md:text-xl mb-6 xs:mb-8 opacity-90 max-w-xs xs:max-w-sm sm:max-w-2xl md:max-w-3xl mx-auto leading-relaxed px-2 xs:px-0">
+            <span className="hidden sm:inline">
+              Stay connected with us on social media for the latest updates,
+              training tips, match highlights, and academy news
+            </span>
+            <span className="sm:hidden">
+              Stay connected for updates, training tips, highlights, and academy
+              news
+            </span>
           </p>
-          
-          <div className="flex justify-center mb-8">
-            <SocialMediaLinks 
-              links={contactInfo.socialLinks} 
-              size="xl"
+
+          <div className="flex justify-center mb-6 xs:mb-8">
+            <SocialMediaLinks
+              links={contactInfo.socialLinks}
+              size="sm"
+              className="xs:size-md sm:size-lg"
             />
           </div>
-
-{/* Followers count display */}
-          {/* <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-center">
-            <div>
-              <div className="text-3xl font-bold mb-2">50K+</div>
-              <div className="opacity-90">Total Followers</div>
-            </div>
-            <div>
-              <div className="text-3xl font-bold mb-2">Daily</div>
-              <div className="opacity-90">Content Updates</div>
-            </div>
-            <div>
-              <div className="text-3xl font-bold mb-2">Live</div>
-              <div className="opacity-90">Match Coverage</div>
-            </div>
-          </div> */}
         </motion.div>
       </div>
     </section>

@@ -26,13 +26,13 @@ const ContactHero = () => {
           >
             <div className="space-y-4">
               {/* Section Title */}
-              <h1 className="text-5xl font-bold text-gray-900">
+              <h1 className="text-4xl sm:text-5xl font-bold text-gray-900">
                 Contact
                 <span className="block text-transparent bg-clip-text bg-gradient-to-r from-primary-600 to-accent-600">
                   Nosa Igiebor Sports Academy
                 </span>
               </h1>
-              <p className="text-xl text-gray-600">
+              <p className="text-lg sm:text-xl text-gray-600">
                 Ready to start your football journey? We're here to help you
                 every step of the way.
               </p>
@@ -40,58 +40,67 @@ const ContactHero = () => {
 
             {/* Quick Contact Options */}
             <div className="space-y-4">
-              <div className="flex items-center space-x-4 p-4 bg-white rounded-xl shadow-sm">
-                <div className="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center">
-                  <MessageCircle className="w-6 h-6 text-green-600" />
-                </div>
-                <div className="flex-1">
-                  <h3 className="font-semibold text-gray-900">WhatsApp</h3>
-                  <p className="text-sm text-gray-600">
-                    Quick response guaranteed
-                  </p>
+              {/* WhatsApp */}
+              <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between p-4 bg-white rounded-xl shadow-sm">
+                <div className="flex flex-col sm:flex-row sm:items-center sm:space-x-4 flex-1">
+                  <div className="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center mx-auto sm:mx-0 mb-3 sm:mb-0">
+                    <MessageCircle className="w-6 h-6 text-green-600" />
+                  </div>
+                  <div className="text-center sm:text-left">
+                    <h3 className="font-semibold text-gray-900">WhatsApp</h3>
+                    <p className="text-sm text-gray-600">
+                      Quick response guaranteed
+                    </p>
+                  </div>
                 </div>
                 <Button
                   onClick={handleWhatsAppClick}
                   size="sm"
-                  className="bg-green-600 hover:bg-green-700"
+                  className="bg-green-600 hover:bg-green-700 w-full sm:w-auto mt-3 sm:mt-0"
                 >
                   Chat Now
                 </Button>
               </div>
 
-              <div className="flex items-center space-x-4 p-4 bg-white rounded-xl shadow-sm">
-                <div className="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center">
-                  <Phone className="w-6 h-6 text-blue-600" />
-                </div>
-                <div className="flex-1">
-                  <h3 className="font-semibold text-gray-900">Phone</h3>
-                  <p className="text-sm text-gray-600">
-                    {contactInfo.phone}
-                  </p>
+              {/* Phone */}
+              <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between p-4 bg-white rounded-xl shadow-sm">
+                <div className="flex flex-col sm:flex-row sm:items-center sm:space-x-4 flex-1">
+                  <div className="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mx-auto sm:mx-0 mb-3 sm:mb-0">
+                    <Phone className="w-6 h-6 text-blue-600" />
+                  </div>
+                  <div className="text-center sm:text-left">
+                    <h3 className="font-semibold text-gray-900">Phone</h3>
+                    <p className="text-sm text-gray-600">{contactInfo.phone}</p>
+                  </div>
                 </div>
                 <Button
                   as="a"
                   href={`tel:${contactInfo.phone}`}
                   size="sm"
                   variant="outline"
+                  className="w-full sm:w-auto mt-3 sm:mt-0"
                 >
                   Call Now
                 </Button>
               </div>
 
-              <div className="flex items-center space-x-4 p-4 bg-white rounded-xl shadow-sm">
-                <div className="w-12 h-12 bg-purple-100 rounded-full flex items-center justify-center">
-                  <Mail className="w-6 h-6 text-purple-600" />
-                </div>
-                <div className="flex-1">
-                  <h3 className="font-semibold text-gray-900">Email</h3>
-                  <p className="text-sm text-gray-600">{contactInfo.email}</p>
+              {/* Email */}
+              <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between p-4 bg-white rounded-xl shadow-sm">
+                <div className="flex flex-col sm:flex-row sm:items-center sm:space-x-4 flex-1">
+                  <div className="w-12 h-12 bg-purple-100 rounded-full flex items-center justify-center mx-auto sm:mx-0 mb-3 sm:mb-0">
+                    <Mail className="w-6 h-6 text-purple-600" />
+                  </div>
+                  <div className="text-center sm:text-left">
+                    <h3 className="font-semibold text-gray-900">Email</h3>
+                    <p className="text-sm text-gray-600">{contactInfo.email}</p>
+                  </div>
                 </div>
                 <Button
                   as="a"
                   href={`mailto:${contactInfo.email}`}
                   size="sm"
                   variant="outline"
+                  className="w-full sm:w-auto mt-3 sm:mt-0"
                 >
                   Send Email
                 </Button>
@@ -110,9 +119,8 @@ const ContactHero = () => {
               <img
                 src="https://images.unsplash.com/photo-1431324155629-1a6deb1dec8d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
                 alt="Nosa Igiebor Sports Academy"
-                className="w-full h-[500px] object-cover"
+                className="w-full h-[400px] sm:h-[500px] object-cover"
               />
-              
             </div>
 
             {/* Floating Contact Card */}
@@ -120,17 +128,24 @@ const ContactHero = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.6 }}
-              className="absolute -bottom-6 -right-6 bg-white rounded-2xl p-6 shadow-xl max-w-xs"
+              className="absolute -bottom-3 -right-3 xs:-bottom-4 xs:-right-4 sm:-bottom-6 sm:-right-6 bg-white rounded-lg xs:rounded-xl sm:rounded-2xl p-3 xs:p-4 sm:p-6 shadow-lg xs:shadow-xl max-w-[140px] xs:max-w-[180px] sm:max-w-[220px] md:max-w-xs border border-gray-100"
             >
-              <div className="flex items-center space-x-3 mb-3">
-                <MapPin className="w-5 h-5 text-primary-600" />
-                <span className="font-semibold text-gray-900">
-                  Our Location
+              <div className="flex items-center space-x-2 xs:space-x-2.5 sm:space-x-3 mb-2 xs:mb-2.5 sm:mb-3">
+                <MapPin className="w-3 h-3 xs:w-4 xs:h-4 sm:w-5 sm:h-5 text-primary-600 flex-shrink-0" />
+                <span className="font-medium xs:font-semibold text-gray-900 text-xs xs:text-sm sm:text-base leading-tight">
+                  <span className="hidden sm:inline">Our Location</span>
+                  <span className="sm:hidden">Location</span>
                 </span>
               </div>
-              <div className="space-x-1 text-sm text-gray-600">
+              <div className="space-y-0.5 xs:space-y-1 text-[10px] xs:text-xs sm:text-sm text-gray-600 leading-tight">
                 {Object.values(contactInfo.address).map((line, i) => (
-                  <p key={i}>{line}</p>
+                  <p
+                    key={i}
+                    className="truncate sm:whitespace-normal"
+                    title={line}
+                  >
+                    {line}
+                  </p>
                 ))}
               </div>
             </motion.div>
