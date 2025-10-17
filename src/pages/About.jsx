@@ -1,3 +1,4 @@
+import MetaTags from "../components/common/MetaTags";
 import OwnerProfile from "../components/about/OwnerProfile";
 import CompleteBiography from "../components/about/CompleteBiography";
 import VisionAndLegacy from "../components/about/VisionAndLegacy";
@@ -8,6 +9,14 @@ import { AcademyInfo, Owner } from "../utils/contents";
 const About = () => {
   return (
     <div className="min-h-screen pt-20">
+      <MetaTags
+        title="About Nosa Igiebor | Nigerian Football Legend & Academy Founder"
+        description="Learn about Nosa Igiebor's legendary football career - AFCON 2013 winner, UEFA Champions League player, and founder of Nigeria's premier youth football academy."
+        keywords="Nosa Igiebor, Nigerian footballer, AFCON 2013, football career"
+        canonical="/about"
+        ogType="profile"
+        ogImage="https://www.nosasportsacademy.com/images/og-about.jpg"
+      />
       <OwnerProfile />
       <CompleteBiography />
       <VisionAndLegacy />

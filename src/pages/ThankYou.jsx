@@ -64,6 +64,12 @@ const ThankYou = () => {
                 <li className="flex items-start space-x-2 xs:space-x-3">
                   <span className="w-1.5 h-1.5 xs:w-2 xs:h-2 bg-primary-600 rounded-full mt-1.5 xs:mt-2 flex-shrink-0"></span>
                   <span className="text-xs xs:text-sm sm:text-base leading-relaxed">
+                    Send your payment slip to our WhatsApp along with your full name and phone number for confirmation.
+                  </span>
+                </li>
+                <li className="flex items-start space-x-2 xs:space-x-3">
+                  <span className="w-1.5 h-1.5 xs:w-2 xs:h-2 bg-primary-600 rounded-full mt-1.5 xs:mt-2 flex-shrink-0"></span>
+                  <span className="text-xs xs:text-sm sm:text-base leading-relaxed">
                     Our admissions team will review your application
                   </span>
                 </li>

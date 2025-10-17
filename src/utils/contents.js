@@ -212,11 +212,11 @@ export const TRAINING_SCHEDULE_DETAILED = [
 export const AcademyInfo = {
   name: "Nosa Sports Academy",
   tagline: "Excellence in Training",
-  foundedYear: 2024,
+  foundedYear: 2025,
 };
 
 export const contactInfo = {
-  whatsApp: "+2349055599964",
+  whatsApp: "+2349133099934",
   email: "contact@nosaIgieborsports.com ",
   address: {
     street: "Stella Maris School, Plot 76 Cadastral Zone C10",
@@ -226,7 +226,7 @@ export const contactInfo = {
     zipCode: "900104",
     country: "Nigeria",
   },
-  phone: "+2348039148064",
+  phone: "+2349133099934",
   socialLinks: {
     facebook: "https://www.facebook.com/NosaIgieborSportsAcademy",
     instagram: "https://www.instagram.com/NosaIgieborSportsAcademy",
